@@ -1,0 +1,80 @@
+.home-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.background-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.watermark {
+  position: relative;
+  z-index: 1;
+  color: goldenrod; /* Ensure this color is applied */
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Improve contrast */
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: goldenrod !important; /* Add specificity if necessary */
+}
+
+.animated-text {
+  font-size: 1.7rem;
+  margin: 10px 0;
+  animation: fadeIn 5s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-section {
+    height: 50vh;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .animated-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-section {
+    height: 40vh;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .animated-text {
+    font-size: 1rem;
+  }
+}

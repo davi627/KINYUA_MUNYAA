@@ -1,0 +1,197 @@
+/* Animation.css */
+.ocean-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(180deg, #87ceeb 0%, #1e90ff 100%);
+  overflow: hidden;
+}
+
+.animation-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.sailing-ship {
+  width: 800px;
+  height: auto;
+  animation: sailAcross 15s linear infinite, bobUpDown 3s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+.fade-in-text {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  animation: fadeIn 2s ease-in;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+}
+
+/* Animation for sailing across the screen */
+@keyframes sailAcross {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+/* Animation for bobbing up and down */
+@keyframes bobUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Animation for text fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Wave styles */
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z' fill='%23003AF3' fill-opacity='0.2'/%3E%3C/svg%3E");
+  background-size: 50% 100px;
+  animation: wave 7s linear infinite;
+  transform-origin: center bottom;
+}
+
+.wave1 {
+  opacity: 1;
+  z-index: 1;
+}
+
+.wave2 {
+  opacity: 0.5;
+  animation: wave 7s linear infinite;
+  animation-delay: -2s;
+  z-index: 1;
+}
+
+.wave3 {
+  opacity: 0.2;
+  animation: wave 7s linear infinite;
+  animation-delay: -4s;
+  z-index: 1;
+}
+
+/* Animation for waves */
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Media Queries for Responsive Design */
+
+/* Large phones and small tablets (landscape phones, 576px and up) */
+@media (max-width: 768px) {
+  .ocean-container {
+    height: 300px; /* Reduce height for smaller screens */
+  }
+
+  .sailing-ship {
+    width: 150px; /* Smaller ship size */
+  }
+
+  .fade-in-text {
+    font-size: 1.2rem; /* Smaller text size */
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .wave {
+    height: 70px; /* Smaller waves */
+    background-size: 50% 70px;
+  }
+}
+
+/* Small phones (portrait phones, less than 576px) */
+@media (max-width: 576px) {
+  .ocean-container {
+    height: 250px; /* Even smaller height */
+  }
+
+  .sailing-ship {
+    width: 100px; /* Even smaller ship size */
+  }
+
+  .fade-in-text {
+    font-size: 1rem; /* Even smaller text size */
+    margin-top: 1rem;
+  }
+
+  .wave {
+    height: 50px; /* Even smaller waves */
+    background-size: 50% 50px;
+  }
+
+  /* Adjust animation speed for smaller screens */
+  .sailing-ship {
+    animation: sailAcross 10s linear infinite, bobUpDown 2s ease-in-out infinite;
+  }
+}
+
+/* For very small devices */
+@media (max-width: 320px) {
+  .ocean-container {
+    height: 200px;
+  }
+
+  .sailing-ship {
+    width: 80px;
+  }
+
+  .fade-in-text {
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+  }
+}
+
+/* For landscape orientation */
+@media (orientation: landscape) and (max-height: 500px) {
+  .ocean-container {
+    height: 200px;
+  }
+
+  .sailing-ship {
+    width: 100px;
+  }
+
+  .fade-in-text {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .wave {
+    height: 40px;
+    background-size: 50% 40px;
+  }
+}

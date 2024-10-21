@@ -1,0 +1,61 @@
+.overview-container {
+  max-width: 1980px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: brown;
+}
+
+.overview-card {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-paragraph {
+  margin: 20px 0;
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+/* Alternating styles for more dynamic look */
+.overview-paragraph:nth-of-type(odd) {
+  text-align: left;
+  transform: translateY(2px);
+}
+
+.overview-paragraph:nth-of-type(even) {
+  text-align: right;
+  transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .overview-container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .overview-card {
+    padding: 15px;
+  }
+
+  .overview-paragraph {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+}
